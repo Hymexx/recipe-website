@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoji Recipes - Recipe Finder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <h1 class="app-title">🍳 Emoji Recipes</h1>
+            <div class="search-container">
+                <input 
+                    type="text" 
+                    id="searchBar" 
+                    class="search-bar" 
+                    placeholder="🔍 Search recipes..."
+                >
+            </div>
+            <div style="display:flex; justify-content:center; margin-top:12px; gap:12px;">
+                <button id="themeToggle" class="category-btn" aria-pressed="false" title="Toggle theme">🌙 Dark</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Category Section -->
+    <section class="categories">
+        <div class="container">
+            <div class="category-list">
+                <button class="category-btn active" data-category="all">
+                    🌟 All Recipes
+                </button>
+                <button class="category-btn" data-category="breakfast">
+                    🍳 Breakfast
+                </button>
+                <button class="category-btn" data-category="salads">
+                    🥗 Salads
+                </button>
+                <button class="category-btn" data-category="pizza">
+                    🍕 Pizza
+                </button>
+                <button class="category-btn" data-category="desserts">
+                    🍰 Desserts
+                </button>
+                <button class="category-btn" data-category="meat">
+                    🥩 Meat
+                </button>
+            </div>
+                <!-- Difficulty Filter -->
+                <div class="difficulty-list" style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+                    <button class="category-btn difficulty-btn active" data-difficulty="all">All Difficulty</button>
+                    <button class="category-btn difficulty-btn" data-difficulty="easy">Easy</button>
+                    <button class="category-btn difficulty-btn" data-difficulty="medium">Medium</button>
+                    <button class="category-btn difficulty-btn" data-difficulty="hard">Hard</button>
+                </div>
+        </div>
+    </section>
+
+    <!-- Recipe Grid Section -->
+    <main class="main-content">
+        <div class="container">
+            <div id="recipeGrid" class="recipe-grid">
+                <!-- Recipe cards will be dynamically inserted here by JavaScript -->
+            </div>
+            <div id="noResults" class="no-results" style="display: none;">
+                <p>😢 No recipes found. Try a different search!</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Recipe Modal -->
+    <div id="recipeModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div id="modalBody">
+                <!-- Recipe details will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
